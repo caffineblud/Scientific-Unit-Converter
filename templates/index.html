@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Unit Converter</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <h2>Categories</h2>
+
+            <button class="category-btn" data-category="Length">
+                Length
+            </button>
+
+            <button class="category-btn" data-category="Mass">
+                Mass
+            </button>
+
+            <button class="category-btn" data-category="Volume">
+                Volume
+            </button>
+
+            <button class="category-btn" data-category="Speed">
+                Speed
+            </button>
+
+            <button class="category-btn" data-category="Temperature">
+                Temperature
+            </button>
+
+        </div>
+
+        <!-- Converter -->
+        <div class="converter">
+
+            <h1>Scientific Unit Converter</h1>
+
+            <input
+                type="number"
+                id="value"
+                placeholder="Enter Value">
+
+            <label>From Unit</label>
+            <select id="from-unit"></select>
+
+            <button id="swap-btn">
+                ⇅
+            </button>
+            <label>To Unit</label>
+            <select id="to-unit"></select>
+
+            <button id="convert-btn">
+                Convert
+            </button>
+
+            <div id="result-card">
+                <h3>RESULT</h3>
+                <div id="result">
+                    Result Appears Here
+                </div>
+            </div>
+            
+            <button id="copy-btn">
+                Copy Result
+            </button>
+        </div>
+
+        <!-- History Panel -->
+        <div class="history">
+            <h2>History</h2>
+            <button id="clear-history-btn">
+                Clear History
+            </button>
+            <ul id="history-list">
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
