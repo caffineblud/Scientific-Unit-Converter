@@ -251,3 +251,34 @@ input,select{
     word-wrap:break-word;
 
 }
+@media (max-width: 768px) {
+
+    .container {
+
+        flex-direction: column;
+
+    }
+
+    .sidebar {
+
+        width: 100%;
+
+        margin-bottom: 20px;
+
+    }
+
+    .converter {
+
+        width: 100%;
+
+        margin-bottom: 20px;
+
+    }
+
+    .history {
+
+        width: 100%;
+
+    }
+
+}
