@@ -16,7 +16,7 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="screenshot/unit_converter_v2.5.png" alt="App Screenshot" width="900"/>
+  <img src="screenshot/unit_converterV2.7.png" alt="App Screenshot" width="900"/>
 </p>
 
 ---
