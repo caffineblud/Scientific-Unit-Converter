@@ -57,7 +57,7 @@ const units = {
     "Day"
     ],
 
-"   Data Storage": [
+    "Data Storage": [
     "Byte",
     "Kilobyte",
     "Megabyte",
