@@ -40,6 +40,29 @@ const units = {
     "Celsius",
     "Fahrenheit",
     "Kelvin"
+    ],
+
+    Area: [
+    "Square Meter",
+    "Square Kilometer",
+    "Square Foot",
+    "Square Inch",
+    "Acre"
+    ],
+
+    Time: [
+    "Second",
+    "Minute",
+    "Hour",
+    "Day"
+    ],
+
+"   Data Storage": [
+    "Byte",
+    "Kilobyte",
+    "Megabyte",
+    "Gigabyte",
+    "Terabyte"
     ]
 };
 

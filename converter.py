@@ -39,6 +39,30 @@ UNITS = {
         "Fahrenheit": 1,
         "Kelvin": 1
     },
+    
+    "Area": {
+        "Square Meter": 1,
+        "Square Kilometer": 1000000,
+        "Square Foot": 0.092903,
+        "Square Inch": 0.00064516,
+        "Acre": 4046.86
+    },
+
+    "Time": {
+        "Second": 1,
+        "Minute": 60,
+        "Hour": 3600,
+        "Day": 86400
+    },
+
+    "Data Storage": {
+        "Byte": 1,
+        "Kilobyte": 1024,
+        "Megabyte": 1024**2,
+        "Gigabyte": 1024**3,
+        "Terabyte": 1024**4
+    },
+
 }
 
 
