@@ -1,162 +1,181 @@
-# 🔬 Scientific Unit Converter V2.9
+# 🔬 Scientific Unit Converter V3.0
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat\&logo=python\&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-Web_Framework-000000?style=flat\&logo=flask\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat\&logo=javascript\&logoColor=black)
-![HTML](https://img.shields.io/badge/HTML5-Structure-E34F26?style=flat\&logo=html5\&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-Styling-1572B6?style=flat\&logo=css3\&logoColor=white)
-![LocalStorage](https://img.shields.io/badge/LocalStorage-Persistent_History-FF8C00?style=flat)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat)
-![Version](https://img.shields.io/badge/Version-2.9-FF8C00?style=flat)
+<div align="center">
 
-> A polished, dark-themed web converter with persistent history, swap functionality, one-click copy, active category highlighting, Temperature conversion support, responsive design, and expanded scientific categories including Area, Time, and Data Storage conversions.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=flat-square&logo=flask&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![LocalStorage](https://img.shields.io/badge/LocalStorage-Persistent-FF8C00?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
+![Version](https://img.shields.io/badge/Version-3.0-FF8C00?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-22c55e?style=flat-square)
+
+**A full-featured scientific unit converter — 8 categories, persistent favorites, smart history, and a polished dark UI.**
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-caffineblud%2FScientific--Unit--Converter-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/caffineblud/Scientific-Unit-Converter)
+
+</div>
 
 ---
 
 ## 📸 Preview
 
 <p align="center">
-  <img src="screenshot/unit_converterV2.9.png" alt="App Screenshot" width="900"/>
+  <img src="screenshot/unit_convertorV3_0upper.png" alt="Converter UI" width="900"/>
+</p>
+
+<p align="center">
+  <img src="screenshot/unit_converterV3_0lower.png" alt="Favorites Panel" width="900"/>
 </p>
 
 ---
 
-## 🆕 What's New in V2.9
+## 🆕 What's New in V3.0
 
-| #  | Feature                          | Description                                                                                          |
-| -- | -------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| 📐 | **Area Conversion**              | Added Area category with Square Meter, Square Kilometer, Square Foot, Square Inch, and Acre support  |
-| ⏱️ | **Time Conversion**              | Added Time category with Second, Minute, Hour, and Day conversions                                   |
-| 💾 | **Data Storage Conversion**      | Added Data Storage category with Byte, Kilobyte, Megabyte, Gigabyte, and Terabyte conversions        |
-| 🎯 | **Expanded Scientific Coverage** | Converter now supports 8 categories covering common engineering, scientific, and computing use cases |
+> V3.0 upgrades the app from a **one-time converter** into a **reusable conversion workspace** with a complete Favorites system.
 
----
-
-## ✨ Previously in V2.8
-
-| #  | Feature                 | Description                                                                                                                                                                                                                                         |
-| -- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 📱 | **Responsive Layout**   | New `@media (max-width: 768px)` breakpoint in `style.css` stacks the sidebar, converter, and history panel vertically (`flex-direction: column`) and switches all three to full width, so the app is usable on phones and tablets, not just desktop |
-| ✅  | **V3 Roadmap Progress** | Mobile responsive layout — previously planned for V3 — is now live in V2.8                                                                                                                                                                          |
+| # | Feature | Details |
+|---|---|---|
+| ⭐ | **Save Favorites** | Save any category + From + To combination with one click |
+| 💾 | **Persistent Favorites** | Stored in `localStorage` — survive refresh, tab close, and browser restart |
+| ⚡ | **Click-to-Autofill** | Click any favorite to instantly load its category and units — no manual setup |
+| ❌ | **Delete Individual Favorites** | Each entry has its own ❌ button — removes only that item via `splice(index, 1)` |
+| 🗑️ | **Clear All Favorites** | Wipes the panel and calls `localStorage.removeItem("favorites")` in one click |
+| 🎨 | **Result Card Redesign** | Result now renders in a bordered orange-glow card with centered `input = output` layout |
+| 📐 | **Dual-Panel Right Sidebar** | History and Favorites now live in the same sidebar, separated by a divider |
 
 ---
 
-## ✨ Previously in V2.7
+## 📋 Changelog — Full Version History
 
-| #   | Feature                           | Description                                                                                                                                                      |
-| --- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🌡️ | **Temperature Category**          | New 5th category added to the sidebar and dropdowns — Celsius, Fahrenheit, Kelvin                                                                                |
-| 🧮  | **Offset-Based Conversion Logic** | Temperature uses dedicated formula-based conversion (`convert_temperature`) instead of simple factor math, since temperature scales aren't purely multiplicative |
-
----
-
-## ✨ Previously in V2.5
-
-| #   | Feature                       | Description                                                                               |
-| --- | ----------------------------- | ----------------------------------------------------------------------------------------- |
-| ⇅   | **Swap Button**               | Instantly swap From ↔ To units with a single click. Rotates 180° on hover.                |
-| 📋  | **Copy Result**               | One-click clipboard copy with a "Copied!" confirmation that resets after 2s               |
-| 💾  | **Persistent History**        | Conversion history saved to `localStorage` — survives page refresh and browser close      |
-| 🗑️ | **Clear History**             | Wipe the history panel and `localStorage` in one click                                    |
-| 🟠  | **Active Category Highlight** | Selected category button glows with an orange box-shadow so you always know where you are |
-
----
-
-## ✨ Full Feature Set
-
-| Feature                               |  V1 | V2.5 | V2.7 | V2.8 | V2.9 |
-| ------------------------------------- | :-: | :--: | :--: | :--: | :--: |
-| 4+ Unit Categories                    |  ✅  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Temperature Conversions (°C / °F / K) |  ❌  |   ❌  |   ✅  |   ✅  |   ✅  |
-| Area Conversions                      |  ❌  |   ❌  |   ❌  |   ❌  |   ✅  |
-| Time Conversions                      |  ❌  |   ❌  |   ❌  |   ❌  |   ✅  |
-| Data Storage Conversions              |  ❌  |   ❌  |   ❌  |   ❌  |   ✅  |
-| Async Conversion (no reload)          |  ✅  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Session History Panel                 |  ✅  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Dark Theme + Orange Accent            |  ✅  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Swap From ↔ To Units                  |  ❌  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Copy Result to Clipboard              |  ❌  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Persistent History (localStorage)     |  ❌  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Clear History Button                  |  ❌  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Active Category Highlight + Glow      |  ❌  |   ✅  |   ✅  |   ✅  |   ✅  |
-| Responsive Layout (Mobile/Tablet)     |  ❌  |   ❌  |   ❌  |   ✅  |   ✅  |
+| Feature | V1 | V2.5 | V2.7 | V2.8 | V2.9 | V3.0 |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Core Conversion (4 categories) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Async Fetch (no page reload) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Dark Theme + Orange Accent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Session History Panel | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Swap From ↔ To (⇅ button) | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Copy Result to Clipboard | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Persistent History (localStorage) | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Clear History Button | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Active Category Glow Highlight | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Temperature (°C / °F / K) | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ |
+| Responsive Layout (≤768px) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Area / Time / Data Storage | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Save Favorite Conversions | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Persistent Favorites | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Click-to-Autofill Favorites | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Delete Individual Favorites | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Clear All Favorites | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Result Card with Orange Glow | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 ---
 
 ## 🗂️ Project Structure
 
-```text
-scientific-unit-converter/
+```
+Scientific-Unit-Converter/
 │
-├── app.py              # 🚀 Flask server — routes and /convert API endpoint
-├── converter.py        # 🧠 Conversion logic, unit registry, temperature formulas, Area/Time/Data Storage support
-├── requirements.txt    # 📦 Python dependencies
+├── app.py                   # 🚀 Flask server — home route + /convert POST endpoint
+├── converter.py             # 🧠 Unit registry (UNITS dict) + convert_unit() + convert_temperature()
+├── requirements.txt         # 📦 Python dependencies
 │
 ├── templates/
-│   └── index.html      # 🏗️ Main layout — swap btn, copy btn, clear history, all conversion categories
+│   └── index.html           # 🏗️  8 category buttons, swap, convert, copy, favorite, dual sidebar
 │
 └── static/
-    ├── style.css       # 🎨 Responsive layout, glow effects, animations
-    └── script.js       # ⚙️ localStorage persistence, swap logic, clipboard API, all category management
+    ├── style.css            # 🎨 Result card glow, favorites panel, responsive breakpoint
+    └── script.js            # ⚙️  Favorites CRUD, autofill, localStorage, swap, clipboard, history
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer                 | Technology                | Purpose                                                        |
-| --------------------- | ------------------------- | -------------------------------------------------------------- |
-| **Backend**           | Flask                     | API routing & Jinja2 template serving                          |
-| **Conversion Engine** | Python                    | Base-value normalization math + dedicated temperature formulas |
-| **Frontend**          | HTML5 + CSS3              | Layout, dark theme, button animations, responsive breakpoints  |
-| **Interactivity**     | Vanilla JavaScript (ES6+) | Async fetch, swap, clipboard, localStorage                     |
-| **Persistence**       | Web LocalStorage API      | History survives refresh & browser close                       |
+| Layer | Technology | Role |
+|---|---|---|
+| **Backend** | Python + Flask | Serves HTML via Jinja2, handles `/convert` POST requests |
+| **Conversion Engine** | Python (`converter.py`) | Factor-based math for 7 categories + formula-based temperature |
+| **Frontend** | HTML5 + CSS3 | 3-column layout, orange-glow UI, responsive media query |
+| **Logic & Interactivity** | Vanilla JS (ES6+) | Async fetch, favorites CRUD, swap, clipboard API, localStorage |
+| **Persistence** | Web LocalStorage API | Both history and favorites survive across sessions |
 
 ---
 
-## 📱 Responsive Design
+## ⭐ Favorites System — Deep Dive
 
-V2.8 introduced a mobile/tablet breakpoint via a CSS media query:
-
-```css
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar, .converter, .history {
-        width: 100%;
-    }
-}
+### How Save Works
+```javascript
+// On clicking ⭐ Favorite
+const favorite = {
+    category: currentCategory,          // e.g. "Temperature"
+    from: document.getElementById("from-unit").value,  // e.g. "Celsius"
+    to: document.getElementById("to-unit").value        // e.g. "Fahrenheit"
+};
+favorites.push(favorite);
+localStorage.setItem("favorites", JSON.stringify(favorites));
 ```
 
-Below 768px, the three-column layout (sidebar, converter, history) collapses into a single stacked column, with each section expanding to full width. This keeps the converter fully usable on phones and tablets without any change to the underlying HTML structure.
+### Click-to-Autofill
+```javascript
+// Clicking a favorite entry in the panel
+li.addEventListener("click", () => {
+    currentCategory = fav.category;
+    updateDropdowns(currentCategory);
+    document.getElementById("from-unit").value = fav.from;
+    document.getElementById("to-unit").value = fav.to;
+});
+```
+
+### Delete & Clear
+```javascript
+// Delete one
+favorites.splice(index, 1);
+localStorage.setItem("favorites", JSON.stringify(favorites));
+
+// Clear all
+localStorage.removeItem("favorites");
+```
 
 ---
 
-## 🧠 Conversion Engine
+## 🧠 Conversion Engine — `converter.py`
 
-Most units are stored relative to a **base unit**. Conversion is a two-step normalization:
+### Factor-Based (7 categories)
+All units stored relative to a base unit. Conversion is two-step normalization:
 
-```text
-Input × from_unit_factor
-─────────────────────────  =  Result
-    to_unit_factor
+```
+Result = (value × from_factor) ÷ to_factor
 ```
 
-**Temperature is the exception** — since Celsius, Fahrenheit, and Kelvin aren't related by a simple multiplicative factor (they involve offsets), temperature conversions are handled by a dedicated `convert_temperature()` function with explicit formulas for each direction.
+### Formula-Based (Temperature only)
+Temperature uses dedicated formulas since °C, °F, and K aren't multiplicatively related:
 
-### Supported Units
+```python
+# Celsius → Fahrenheit        (value × 9/5) + 32
+# Celsius → Kelvin            value + 273.15
+# Fahrenheit → Celsius        (value − 32) × 5/9
+# Fahrenheit → Kelvin         ((value − 32) × 5/9) + 273.15
+# Kelvin → Celsius            value − 273.15
+# Kelvin → Fahrenheit         ((value − 273.15) × 9/5) + 32
+```
 
-| Category            | Base Unit         | Units                                                            |
-| ------------------- | ----------------- | ---------------------------------------------------------------- |
-| 📏 **Length**       | Meter             | Meter, Kilometer, Centimeter, Millimeter, Inch, Foot, Yard, Mile |
-| ⚖️ **Mass**         | Kilogram          | Kilogram, Gram, Milligram, Pound, Ounce                          |
-| 🧪 **Volume**       | Liter             | Liter, Milliliter, Cubic Meter, Gallon                           |
-| 💨 **Speed**        | m/s               | m/s, km/h, mph                                                   |
-| 🌡️ **Temperature** | — (formula-based) | Celsius, Fahrenheit, Kelvin                                      |
-| 📐 **Area**         | Square Meter      | Square Meter, Square Kilometer, Square Foot, Square Inch, Acre   |
-| ⏱️ **Time**         | Second            | Second, Minute, Hour, Day                                        |
-| 💾 **Data Storage** | Byte              | Byte, Kilobyte, Megabyte, Gigabyte, Terabyte                     |
+### All Supported Units
+
+| Category | Base Unit | Units |
+|---|---|---|
+| 📏 **Length** | Meter | Meter, Kilometer, Centimeter, Millimeter, Inch, Foot, Yard, Mile |
+| ⚖️ **Mass** | Kilogram | Kilogram, Gram, Milligram, Pound, Ounce |
+| 🧪 **Volume** | Liter | Liter, Milliliter, Cubic Meter, Gallon |
+| 💨 **Speed** | m/s | m/s, km/h, mph |
+| 🌡️ **Temperature** | — (formula) | Celsius, Fahrenheit, Kelvin |
+| 📐 **Area** | Square Meter | Square Meter, Square Kilometer, Square Foot, Square Inch, Acre |
+| ⏱️ **Time** | Second | Second, Minute, Hour, Day |
+| 💾 **Data Storage** | Byte (binary) | Byte, Kilobyte (1024), Megabyte (1024²), Gigabyte (1024³), Terabyte (1024⁴) |
+
+> **Note:** Data Storage uses binary prefixes (1 KB = 1024 B), not decimal (1000 B).
 
 ---
 
@@ -164,41 +183,42 @@ Input × from_unit_factor
 
 ### `POST /convert`
 
-**Request**
-
+**Standard Request**
 ```json
 {
-    "category": "Mass",
+    "category": "Data Storage",
     "value": 25,
-    "from_unit": "Pound",
-    "to_unit": "Kilogram"
+    "from_unit": "Gigabyte",
+    "to_unit": "Kilobyte"
 }
 ```
-
-**Response**
-
 ```json
-{
-    "result": 11.3398
-}
+{ "result": 26214400.0 }
 ```
 
-**Temperature Example**
-
+**Temperature Request**
 ```json
 {
     "category": "Temperature",
-    "value": 100,
-    "from_unit": "Celsius",
-    "to_unit": "Fahrenheit"
+    "value": 98,
+    "from_unit": "Fahrenheit",
+    "to_unit": "Celsius"
 }
 ```
-
-**Response**
-
 ```json
-{
-    "result": 212.0
+{ "result": 36.666667 }
+```
+
+---
+
+## 📱 Responsive Design
+
+Below `768px`, the three-column layout collapses into a single stacked column:
+
+```css
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .sidebar, .converter, .history { width: 100%; }
 }
 ```
 
@@ -206,38 +226,42 @@ Input × from_unit_factor
 
 ## ⚙️ Setup & Installation
 
-### Prerequisites
-
-* Python 3.10+
-* pip
-
-### Install & Run
-
 ```bash
-pip install -r requirements.txt
+# Clone the repo
+git clone https://github.com/caffineblud/Scientific-Unit-Converter.git
+cd Scientific-Unit-Converter
+
+# Install dependencies
+pip install flask
+
+# Run
 python app.py
 ```
 
-Open in browser:
-
-```text
+```
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 🔮 Planned for V3
+## 🔮 Planned for V3.x
 
-* [ ] ⭐ Favorite conversions
-* [ ] 🔍 Unit search filter in dropdowns
-* [ ] 📊 Conversion history chart
-* [ ] 📄 Export history to CSV
-* [ ] 🌐 Deploy to Render / Railway
+- [ ] 🔍 Unit search filter in dropdowns
+- [ ] 📊 Visual history chart
+- [ ] 📄 Export history to CSV
+- [ ] 🌐 Deploy to Render / Railway
 
 ---
 
 ## 👨‍💻 Author
 
+<div align="center">
+
 **Yash Kumar Singh**
 
-Built with ❤️ — V2.9 expands the converter with Area, Time, and Data Storage categories while retaining the responsive layout, Temperature support, and usability enhancements introduced in earlier versions.
+[![GitHub](https://img.shields.io/badge/GitHub-caffineblud-181717?style=flat-square&logo=github)](https://github.com/caffineblud)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash_Kumar_Singh-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/yash-kumar-singh-8a4b193b1)
+
+*Built with ❤️ — V3.0 makes the converter a workspace you actually want to come back to.*
+
+</div>

@@ -65,7 +65,16 @@ const units = {
     "Terabyte"
     ]
 };
+const favoriteBtn =
+    document.getElementById("favorite-btn");
 
+const favoritesList =
+    document.getElementById("favorites-list");
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem("favorites")
+    ) || [];
 
 // Populate dropdowns
 function updateDropdowns(category) {
@@ -96,6 +105,64 @@ function updateDropdowns(category) {
         option2.textContent = unit;
 
         toSelect.appendChild(option2);
+
+    });
+
+}
+function renderFavorites() {
+
+    favoritesList.innerHTML = "";
+
+    favorites.forEach((fav, index) => {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent =
+            `${fav.category}: ${fav.from} → ${fav.to}`;
+
+        // Auto-fill on click
+        li.addEventListener("click", () => {
+
+            currentCategory =
+                fav.category;
+
+            updateDropdowns(currentCategory);
+
+            document.getElementById("from-unit").value =
+                fav.from;
+
+            document.getElementById("to-unit").value =
+                fav.to;
+
+        });
+
+        // Delete button
+        const deleteBtn =
+            document.createElement("button");
+
+        deleteBtn.textContent = "❌";
+
+        deleteBtn.style.marginLeft = "10px";
+
+        deleteBtn.addEventListener("click", (e) => {
+
+            e.stopPropagation();
+
+            favorites.splice(index, 1);
+
+            localStorage.setItem(
+                "favorites",
+                JSON.stringify(favorites)
+            );
+
+            renderFavorites();
+
+        });
+
+        li.appendChild(deleteBtn);
+
+        favoritesList.appendChild(li);
 
     });
 
@@ -313,5 +380,35 @@ document
         console.error(error);
 
     }
+
+});
+favoriteBtn.addEventListener("click", () => {
+
+    const favorite = {
+        category: currentCategory,
+        from: document.getElementById("from-unit").value,
+        to: document.getElementById("to-unit").value
+    };
+
+    favorites.push(favorite);
+
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
+
+    renderFavorites();
+
+});
+renderFavorites();
+document
+.getElementById("clear-favorites-btn")
+.addEventListener("click", () => {
+
+    favorites = [];
+
+    favoritesList.innerHTML = "";
+
+    localStorage.removeItem("favorites");
 
 });
