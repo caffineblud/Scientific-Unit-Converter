@@ -23,11 +23,11 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="screenshot/unit_convertorV3_0upper.png" alt="Converter UI" width="900"/>
+  <img src="screenshot/unit_converterV3.0upper.png" alt="Converter UI" width="900"/>
 </p>
 
 <p align="center">
-  <img src="screenshot/unit_converterV3_0lower.png" alt="Favorites Panel" width="900"/>
+  <img src="screenshot/unit_converterV3.0lower.png" alt="Favorites Panel" width="900"/>
 </p>
 
 ---
